@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: static-site
+  name: static-site
+  namespace: static-site
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: static-site
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: static-site
+    spec:
+      containers:
+      - image: static-site:latest
+        name: static-site
+        resources: {}
+status: {}
